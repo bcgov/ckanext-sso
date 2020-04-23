@@ -50,7 +50,8 @@ class SSOHelper(object):
         if self.profile_fullname_field and self.profile_fullname_field in user_data:
             user.fullname = user_data[self.profile_fullname_field]
         if self.profile_group_field and self.profile_group_field in user_data:
-            if self.sysadmin_group_name and self.sysadmin_group_name in user_data[self.profile_group_field]:
+            if self.sysadmin_group_name and self.profile_group_delim \
+                    and self.profile_group_delim + self.sysadmin_group_name in user_data[self.profile_group_field]:
                 user.sysadmin = True
             else:
                 user.sysadmin = False
