@@ -1,3 +1,5 @@
+![img](https://img.shields.io/badge/Lifecycle-Stable-97ca00)
+
 # ckanext-sso
 OpenID connect plugin for CKAN used by the B.C. Catalogue.
 
