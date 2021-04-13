@@ -1,8 +1,9 @@
-# KEYCLOAK USER MANAGEMENT FOR BC DATA CATALOGUE (BCDC)
+# KEYCLOAK MANAGEMENT FOR BC DATA CATALOGUE
 
 |**AUDIENCE**|
-|:---:|:---:|
-| *Keycloak Administrators* | *BCDC Administrators*|
+|:---:|
+| *Keycloak Administrators* | 
+| *BCDC Administrators* |
 
 ## Table of Contents
 + [**ROLE DEFINITIONS**](#role-definitions)
@@ -66,3 +67,4 @@
 + Member
 
 [RETURN TO TOP][1]
+[1]: #keycloak-management-for-bc-data-catalogue
