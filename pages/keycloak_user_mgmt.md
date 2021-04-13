@@ -6,7 +6,7 @@
 +	Keycloak Groups: https://www.keycloak.org/docs/9.0/server_admin/index.html#groups
 + CKAN User Management: https://docs.ckan.org/en/ckan-2.7.3/maintaining/authorization.html
 
-## Role Defintions
+## Role Definitions
 
 |User Role| Definition|Abilities|
 |:---:|:---:|:---:|
