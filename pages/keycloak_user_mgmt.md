@@ -1,9 +1,29 @@
 # Keycloak User Management for BC Data Catalogue (BCDC)
 
 ## Resources
-+	User Management: https://www.keycloak.org/docs/9.0/server_admin/index.html#user-management
-+	Roles: https://www.keycloak.org/docs/9.0/server_admin/index.html#roles
-+	Groups: https://www.keycloak.org/docs/9.0/server_admin/index.html#groups
++	Keycloak User Management: https://www.keycloak.org/docs/9.0/server_admin/index.html#user-management
++	Keycloak Roles: https://www.keycloak.org/docs/9.0/server_admin/index.html#roles
++	Keycloak Groups: https://www.keycloak.org/docs/9.0/server_admin/index.html#groups
++ CKAN User Management: https://docs.ckan.org/en/ckan-2.7.3/maintaining/authorization.html
+
+## Role Defintions
+
+|User Role| Definition|Abilities|
+|:---:|:---:|:---:|
+|Sysadmin| | |
+|Org Admin| | |
+|Org Editor| |Not implimented at this time |
+|Org Member| | |
+|Group Admin| | |
+|Goup Editor| |Not implimented at this time|
+|Group Member| | |
+
+
+## Keycloak Users
+
+## Keycloak Groups
+
+## Keycloak User Management
 
 # OPTION 1
 ## Sysadmin
