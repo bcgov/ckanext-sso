@@ -5,6 +5,7 @@
 +	Roles: https://www.keycloak.org/docs/9.0/server_admin/index.html#roles
 +	Groups: https://www.keycloak.org/docs/9.0/server_admin/index.html#groups
 
+# OPTION 1
 ## Sysadmin
 ## Admin
 + Ministry/Org
@@ -19,6 +20,7 @@
 + Branch/Suborg 
 * Group
 
+# OPTION 2
 ## Sysadmin
 ## Ministry/Org
 + Admin
