@@ -22,9 +22,12 @@
 |User Role| Definition|Abilities|
 |:---:|:---:|:---:|
 |Sysadmin| | |
-|Org Admin| | |
-|Org Editor| |Not implimented at this time |
-|Org Member| | |
+|Parent Org Admin|Parent granting will provide child or suborgs abilities.| |
+|Parent Org Editor| | |
+|Parent Org Member| | |
+|Suborg Admin| | |
+|Suborg Editor| |Not implimented at this time |
+|Suborg Member| | |
 |Group Admin| | |
 |Group Editor| |Not implimented at this time|
 |Group Member| | |
@@ -32,6 +35,11 @@
 
 ## KEYCLOAK USERS
 + Add
+Adding users to Keycloak requires the following
+    - Username*: IDIR<@idir>
+    - Email
+    - First Name
+    - Last Name
 + Delete
 
 ## KEYCLOAK GROUPS
@@ -39,8 +47,9 @@
 + Rename
 + Delete
 
-## KEYCLOAK USER MANAGEMENT
-
+## KEYCLOAK ROLE MAPPING
++ User
++ Group
 
 
 [RETURN TO TOP][1]
