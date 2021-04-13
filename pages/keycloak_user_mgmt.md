@@ -36,7 +36,7 @@
 ## KEYCLOAK USERS
 + Add
 Adding users to Keycloak requires the following
-    - Username*: IDIR<@idir>
+    - Username*: lowercase <idir>@idir
     - Email
     - First Name
     - Last Name
