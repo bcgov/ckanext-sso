@@ -5,7 +5,7 @@
 | *Keycloak Administrators* | *BCDC Administrators*|
 
 ## Table of Contents
-+ [**DATA PUBLICATION CHANNELS**](#data-publication-channels)
++ [**ROLE DEFINITIONS**](#role-definitions)
 + 
 
 -----------------------
