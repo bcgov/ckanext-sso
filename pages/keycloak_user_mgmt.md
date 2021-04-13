@@ -30,41 +30,19 @@
 |Group Member| | |
 
 
-## Keycloak Users
+## KEYCLOAK USERS
++ Add
++ Delete
 
-## Keycloak Groups
+## KEYCLOAK GROUPS
++ Add
++ Rename
++ Delete
 
-## Keycloak User Management
+## KEYCLOAK USER MANAGEMENT
 
-# OPTION 1
-## Sysadmin
-## Admin
-+ Ministry/Org
-+ Branch/Suborg 
-* Group
-## Editor
-+ Ministry/Org
-+ Branch/Suborg 
-* Group
-## Member
-+ Ministry/Org
-+ Branch/Suborg 
-* Group
 
-# OPTION 2
-## Sysadmin
-## Ministry/Org
-+ Admin
-+ Editor
-+ Member
-## Branch/Suborg 
-+ Admin
-+ Editor
-+ Member
-## Group
-+ Admin
-+ Editor
-+ Member
 
 [RETURN TO TOP][1]
+
 [1]: #keycloak-management-for-bc-data-catalogue
