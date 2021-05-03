@@ -72,9 +72,9 @@ class SSOHelper(object):
                 
                 group = group.split(self.profile_group_delim)
 
-                if len(group) > 1:
-                    group_name = "".join(group[0].strip())
-                    capacity = group[1].lower()
+                if len(group) >= 2:
+                    group_name = "".join(group[len(group)-2].strip())
+                    capacity = group[len(group)-1].lower()
 
                     dbGroup = model.Session.query(model.Group).filter(model.Group.name == group_name).first()
                     if not dbGroup is None:
