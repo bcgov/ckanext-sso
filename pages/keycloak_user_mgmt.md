@@ -19,18 +19,19 @@
 
 ## ROLE DEFINITIONS
 
-|User Role| Definition|Abilities|
-|:---:|:---:|:---:|
-|Sysadmin| | |
-|Parent Org Admin|Parent granting will provide child or suborgs abilities.| |
-|Parent Org Editor| | |
-|Parent Org Member| | |
-|Suborg Admin| | |
-|Suborg Editor| |Not implimented at this time |
-|Suborg Member| | |
-|Group Admin| | |
-|Group Editor| |Not implimented at this time|
-|Group Member| | |
+|User Role| Definition|Abilities|Implimented|
+|:---:|:---:|:---:|:---:|
+|Sysadmin| | | |
+|Parent Org Admin|Parent granting will provide child or suborgs abilities| |
+| | | |
+|Parent Org Editor|Parent granting will provide child or suborgs abilities | |Not at this time|
+|Parent Org Member|Parent granting will provide child or suborgs abilities | |Not at this time|
+|Suborg Admin| | | |
+|Suborg Editor| | | |
+|Suborg Member| | |Not at this time |
+|Group Admin| | | | 
+|Group Editor| | | |
+|Group Member| | |Not at this time |
 
 
 ## KEYCLOAK USERS
