@@ -57,9 +57,9 @@ Adding users to Keycloak requires the following
 Fine grain has not be implimented thus the following is applied to mimic it
 
 + Group: admin-user-mgmt-bcdc
-+ Role mapping: 
-    - Client Roles: realm-management
-        - manage-users 
+    + Role mapping: 
+        - Client Roles: realm-management
+            - manage-users 
 + Users: Only grant those who are to use Keycloak to manage users.
 
 [RETURN TO TOP][1]
