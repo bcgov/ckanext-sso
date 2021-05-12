@@ -2,8 +2,8 @@
 **Audience**: DataBC Catalogue Sysadmins
 
 **Notes**: 
-+ Keycloak Groups are tied Catalogue or CKAN Organizations and Groups.
-+ In CKAN there are 3 levels of privileges: Admin, Editor and Member, these are each defined as their own Keycloak Group.
++ Keycloak Groups are tied to the Catalogue or CKAN Organizations and Groups.
++ In CKAN there are 3 roles or privileges: Admin, Editor and Member, these are each defined as their own Keycloak Group.
 + Always search that a group does not already exist.
 + Search is case sensitive.
 + Keycloak Group **must** match that of a CKAN Organization or Group as is displayed in the CKAN **Name** field format, e.g., ministry-of-citizens-sevices/databc-program.
