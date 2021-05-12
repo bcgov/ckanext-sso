@@ -84,7 +84,10 @@
 1. Repeat the above for the other Groups with the same name and different privileges.
 
 ## KEYCLOAK USER GROUP MEMBERSHIP
+**Audience**: DataBC Catalogue Administrative staff and Sysadmins
+
 The following is how to grant users to be Admin, Editors or Members of a CKAN Organization or Group.
+
 **Notes**:
 + Groups are assigned to Users, as Users cannot be assigned to Groups via the UI.
 + Removing Groups from Users, the Group does not highlight, but does when adding Groups.
