@@ -1,11 +1,12 @@
 ## KEYCLOAK USERS
-Accounts will be added to Keycloak when they first log into the catalogue.
+**Audience**: DataBC Catalogue Administrative staff and Sysadmins
 
-Always search if a user exists first, if they were added and have never logged in, only their IDIR will be searchable. Once the log in, it will sync with LDAP and populate;
-+ Email, Last name, First Name.
-
-Search is case sensitive.
-
+**Notes**: 
++ Search is case sensitive.
++ Users will be automatically be added when they log into Catalogue if they are not already added during the intial population from ADAM.
++ If a user has been added but never logged in, only their **Username** will be popuated. Once they log in then the other fields will be populated automatically.
+**Future Enhancements**: Delegation to account management is to be done via a front end management tool that will call Keycloak API.
+ 
 ### ADD A USER
 1. Under **Manage**, click on **Users**
 1. Click the **Add user** button on the top right
@@ -18,7 +19,7 @@ Search is case sensitive.
     - Last Name: 
  
 ### DELETE A USER
-1. Search for there IDIR or name
+1. Search for their IDIR or name
 1. Click
     1. The **Delete** button to far right of their entry
     2. On their **ID** and then the trashcan symbol - PREFERENCE
@@ -28,17 +29,15 @@ Search is case sensitive.
 
 
 ## KEYCLOAK GROUPS
-Keycloak Groups are tied Catalogue or CKAN Orgs and Groups.
+**Audience**: DataBC Catalogue Sysadmins
 
-In CKAN there are 3 levels of abilities, Admin, Editor and Member.
-
-Each of these levels then corresponds to a Keycloak Group.
-
-Always search that a group does not already exist. Search is case sensitive.
-
-If a Keycloak Group **must** match that of a CKAN Org, Suborg or Group as is displayed in the Name format, e.g., ministry-of-citizens-sevices/databc-program
-
-CKAN Sysadmin privileges are required to update a CKAN Org, Suborg or Group and thus only those with this privilege as well as KeyCloak Mange-Users privileges should do this.
+**Notes**: 
++ Keycloak Groups are tied Catalogue or CKAN Organizations and Groups.
++ In CKAN there are 3 levels of abilities, Admin, Editor and Member and these are each defined as their own Keycloak Group.
++ Always search that a group does not already exist.
++ Search is case sensitive.
++ Keycloak Group **must** match that of a CKAN Organization or Group as is displayed in the CKAN **Name** field format, e.g., ministry-of-citizens-sevices/databc-program.
++ CKAN Organizations and Groups are stored in the same field and thus must be unique.
 
 ### ADD A GROUP
 1. Under **Manage**, click on **Groups** 
@@ -59,17 +58,16 @@ CKAN Sysadmin privileges are required to update a CKAN Org, Suborg or Group and 
 
 
 ### RENAME A GROUP
-Renaming a Keycloak Group happens when a Ministry/Org, Branch/Suborg or CKAN Group has changed.
-* Requires the renaming of all 3 levels of privileges for that same organization or group.
+**NOTES**:
++ Renaming a Keycloak Group happens when a Ministry/Org, Branch/Suborg or CKAN Group has changed.
+    - Requires the renaming of all 3 levels of privileges for that same CKAN Organization or Group.
 
-CKAN Sysadmin privileges are required to update a CKAN Org, Suborg or Group and thus only those with this privilege as well as KeyCloak Mange-Users privileges should do this.
 
 ### DELETE A GROUP
-CKAN Sysadmin privileges are required to update a CKAN Org, Suborg or Group and thus only those with this privilege as well as KeyCloak Mange-Users privileges should do this.
-
-Deleting a Keycloak Group should
-* Only happen when a CKAN Org or Group needs to be deleted and not renamed.
-* Requires the deletion of all 3 levels of privileges.
+**NOTES**:
++ Deleting a Keycloak Group should
+    - Only happen when a CKAN Org or Group needs to be deleted and not renamed.
+    - Requires the deletion of all 3 levels of privileges.
 
 ## KEYCLOAK USER GROUP MEMBERSHIP
 The following is how to grant users to be Admin, Editors or Members of a CKAN Organization or Group.
@@ -92,7 +90,7 @@ The following is how to grant users to be Admin, Editors or Members of a CKAN Or
     - This group will no longer be listed in the Group Membership list
 
 ## KEYCLOAK FINE GRAIN
-Fine grain has not be implimented thus the following is applied to mimic it
+Fine grain has not be implimented thus the following is applied to mimic it:
 
 + Group: admin-user-mgmt-bcdc
     + Role mapping: 
