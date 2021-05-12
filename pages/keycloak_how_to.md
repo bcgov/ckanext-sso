@@ -33,10 +33,11 @@
 
 **Notes**: 
 + Keycloak Groups are tied Catalogue or CKAN Organizations and Groups.
-+ In CKAN there are 3 levels of abilities, Admin, Editor and Member and these are each defined as their own Keycloak Group.
++ In CKAN there are 3 levels of privileges: Admin, Editor and Member, these are each defined as their own Keycloak Group.
 + Always search that a group does not already exist.
 + Search is case sensitive.
 + Keycloak Group **must** match that of a CKAN Organization or Group as is displayed in the CKAN **Name** field format, e.g., ministry-of-citizens-sevices/databc-program.
+    - if not using the API to retrieve this, the easiset way is to copy from the URL when clicking on the CKAN Organization or Group.
 + CKAN Organizations and Groups are stored in the same field and thus must be unique.
 
 ### ADD A GROUP
@@ -66,7 +67,7 @@
 ### DELETE A GROUP
 **NOTES**:
 + Deleting a Keycloak Group should
-    - Only happen when a CKAN Org or Group needs to be deleted and not renamed.
+    - Only happen when a CKAN Organization or Group needs to be deleted and not renamed.
     - Requires the deletion of all 3 levels of privileges.
 
 ## KEYCLOAK USER GROUP MEMBERSHIP
@@ -87,13 +88,13 @@ The following is how to grant users to be Admin, Editors or Members of a CKAN Or
 1. Click the applicable group under the **Group Membership** list
     - This **_will not_** become highlighted
 1. Click **Leave**
-    - This group will no longer be listed in the Group Membership list
+    - This group will no longer be listed in the **Group Membership** list
 
 ## KEYCLOAK FINE GRAIN
 Fine grain has not be implimented thus the following is applied to mimic it:
 
-+ Group: admin-user-mgmt-bcdc
++ Group: **admin-user-mgmt-bcdc**
     + Role mapping: 
         - Client Roles: realm-management
             - manage-users 
-+ Users: Only grant those who are to use Keycloak to manage users.
++ Users: Only grant those who are identified as Catalogue Administartive staff to use Keycloak to manage users.
