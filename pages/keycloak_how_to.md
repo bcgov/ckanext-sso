@@ -66,7 +66,7 @@
 1. Under **Manage**, click on **Users**
 1. Click the **Add user** button on the top right
 1. Populate only
-    - Username*: <idir>@idir
+    - Username*: \<idir>\@idir
         - e.g., bobross@idir
 1. The following will be autopopulated when they log in
     - Email:
