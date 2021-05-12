@@ -1,33 +1,3 @@
-## KEYCLOAK USERS
-**Audience**: DataBC Catalogue Administrative staff and Sysadmins
-
-**Notes**: 
-+ Search is case sensitive.
-+ Users will be automatically be added when they log into Catalogue if they are not already added during the intial population from ADAM.
-+ If a user has been added but never logged in, only their **Username** will be popuated. Once they log in then the other fields will be populated automatically.
-**Future Enhancements**: Delegation to account management is to be done via a front end management tool that will call Keycloak API.
- 
-### ADD A USER
-1. Under **Manage**, click on **Users**
-1. Click the **Add user** button on the top right
-1. Populate only
-    - Username*: <idir>@idir
-        - e.g., bobross@idir
-1. The following will be autopopulated when they log in
-    - Email:
-    - First Name: 
-    - Last Name: 
- 
-### DELETE A USER
-1. Search for their IDIR or name
-1. Click
-    1. The **Delete** button to far right of their entry
-    2. On their **ID** and then the trashcan symbol - PREFERENCE
-1. Click **Delete** on the popup to confirm you want to delete this user
-    - The User's ID is what is displayed in this popup, therefore be sure this is the user you want to delete first.
-    - Hence recommend deleting a user via Option 2 above. 
-
-
 ## KEYCLOAK GROUPS
 **Audience**: DataBC Catalogue Sysadmins
 
@@ -82,6 +52,35 @@
 1. Click the **Delete** button
 1. Click **Delete** again on the popup to confirm you want to delete this group
 1. Repeat the above for the other Groups with the same name and different privileges.
+
+## KEYCLOAK USERS
+**Audience**: DataBC Catalogue Administrative staff and Sysadmins
+
+**Notes**: 
++ Search is case sensitive.
++ Users will be automatically be added when they log into Catalogue if they are not already added during the intial population from ADAM.
++ If a user has been added but never logged in, only their **Username** will be popuated. Once they log in then the other fields will be populated automatically.
+**Future Enhancements**: Delegation to account management is to be done via a front end management tool that will call Keycloak API.
+ 
+### ADD A USER
+1. Under **Manage**, click on **Users**
+1. Click the **Add user** button on the top right
+1. Populate only
+    - Username*: <idir>@idir
+        - e.g., bobross@idir
+1. The following will be autopopulated when they log in
+    - Email:
+    - First Name: 
+    - Last Name: 
+ 
+### DELETE A USER
+1. Search for their IDIR or name
+1. Click
+    1. The **Delete** button to far right of their entry
+    2. On their **ID** and then the trashcan symbol - PREFERENCE
+1. Click **Delete** on the popup to confirm you want to delete this user
+    - The User's ID is what is displayed in this popup, therefore be sure this is the user you want to delete first.
+    - Hence recommend deleting a user via Option 2 above. 
 
 ## KEYCLOAK USER GROUP MEMBERSHIP
 **Audience**: DataBC Catalogue Administrative staff and Sysadmins
