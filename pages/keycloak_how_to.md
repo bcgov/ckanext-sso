@@ -40,6 +40,7 @@
     - if not using the API to retrieve this, the easiset way is to copy from the URL when clicking on the CKAN Organization or Group.
 + CKAN Organizations and Groups are stored in the same field and thus must be unique.
 
+
 ### ADD A GROUP
 1. Under **Manage**, click on **Groups** 
 1. Click **New** 
@@ -63,6 +64,11 @@
 + Renaming a Keycloak Group happens when a Ministry/Org, Branch/Suborg or CKAN Group has changed.
     - Requires the renaming of all 3 levels of privileges for that same CKAN Organization or Group.
 
+1. Under **Manage**, Click **Groups**
+1. Search for the Group (case sensitve and all entries are lowercase)
+1. Double click on the **Group**
+1. Update the Group Name
+1. Repeat the above for the other associated Groups with the different privileges.
 
 ### DELETE A GROUP
 **NOTES**:
@@ -70,8 +76,18 @@
     - Only happen when a CKAN Organization or Group needs to be deleted and not renamed.
     - Requires the deletion of all 3 levels of privileges.
 
+1. Under **Manage**, Click **Groups**
+1. Search for the Group (case sensitve and all entries are lowercase)
+1. Click on the **Group**
+1. Click the **Delete** button
+1. Click **Delete** again on the popup to confirm you want to delete this group
+1. Repeat the above for the other Groups with the same name and different privileges.
+
 ## KEYCLOAK USER GROUP MEMBERSHIP
 The following is how to grant users to be Admin, Editors or Members of a CKAN Organization or Group.
+**Notes**:
++ Groups are assigned to Users, as Users cannot be assigned to Groups via the UI.
++ Removing Groups from Users, the Group does not highlight, but does when adding Groups.
 
 ### ADD A GROUP TO A USER
 1. Search and click  the **User**'s ID
