@@ -21,9 +21,11 @@
 
 |Term|Definition|Role Impact|
 |:---|:---|:---|
-|Parent Org|Ministry or Highest level of Organization|Assigned user role membership access to all Ministry's Branches/Divisions records (datasets)|
-|Suborg|Branch/Division under Ministry or Organizaiton|Assigned user role membership access to all Suborg records (datasets)| 
-|Group|Container of like records/datasets for quick viewing without searching|Assigned user role membership access to associated group(s)| 
+|Parent Org|Ministry or Highest level of Organization|Assigned User Role membership access to all Ministry's Branches/Divisions records (datasets)|
+|Suborg|Branch/Division under Ministry or Organizaiton|Assigned User Role membership access to all Suborg records (datasets)| 
+|Group|Container of like records/datasets for quick viewing without searching|Assigned User Role membership access to associated group(s)| 
+
+
 
 |User Role| Definition|Abilities|Implemented|
 |:---:|:---|:---|:---|
