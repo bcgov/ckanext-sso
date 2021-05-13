@@ -19,6 +19,12 @@
 
 ## ROLE DEFINITIONS
 
+|Term|Definition|
+|:---|:---|
+|Parent Org|Ministry or Highest level of Organization|
+|Suborg|Branch/Division under Ministry or Organizaiton|
+|Group|Container of like records/datasets for quick viewing without searching|
+
 |User Role| Definition|Abilities|Implemented|
 |:---:|:---|:---|:---|
 |Sysadmin| | | |
