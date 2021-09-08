@@ -46,13 +46,15 @@
 
 ## KEYCLOAK USERS
 + Add
-
+ 
 Adding users to Keycloak requires the following
     - Username*: lowercase <idir>@idir
     - Email
     - First Name
     - Last Name
 + Delete
+    
+Need to review at a later date the use of @ as it conflicts with ckan and thus it behaves like an invalid user.
 
 ## KEYCLOAK GROUPS
 + Add
