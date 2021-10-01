@@ -2,7 +2,7 @@
 **Audience**: DataBC Catalogue Sysadmins
 
 ## Table of Contents
-+ [NOTES TO ADMINISTER GROUPS AND USERS](#notes-to-administer-groups-and-users)
++ [**NOTES TO ADMINISTER GROUPS AND USERS**](#notes-to-administer-groups-and-users)
    + [**ADD A GROUP**](#add-a-group)
    + [**RENAME A GROUP**](#rename-a-group)
    + [**DELETE A GROUP**](#delete-a-group)
