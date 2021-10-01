@@ -1,5 +1,9 @@
-## KEYCLOAK GROUPS
-**Audience**: DataBC Catalogue Sysadmins
+# KEYCLOAK GROUPS
+
+|**AUDIENCE**|**DESCRIPTION**|
+|:---|:---|
+|DataBC Catalogue Sysadmins|TBD|
+|DataBC Catalogue Admins|TBD|
 
 ## Table of Contents
 + [**NOTES TO ADMINISTER GROUPS AND USERS**](#notes-to-administer-groups-and-users)
@@ -43,7 +47,7 @@
 
 
 ### RENAME A GROUP
-**NOTES**:
+**Things to note**:
 + Renaming a Keycloak Group happens when a Ministry/Org, Branch/Suborg or CKAN Group has changed.
 + Requires the renaming of all 3 levels of privileges for that same CKAN Organization or Group.
 
@@ -54,7 +58,7 @@
 1. Repeat the above for the other associated Groups with the different privileges.
 
 ### DELETE A GROUP
-**NOTES**:
+**Things to note**:
 + Deleting a Keycloak Group should only happen when a CKAN Organization or Group needs to be deleted and not renamed.
 + Requires the deletion of all 3 levels of privileges.
 
@@ -66,9 +70,8 @@
 1. Repeat the above for the other Groups with the same name and different privileges.
 
 ## KEYCLOAK USERS
-**Audience**: DataBC Catalogue Administrative staff and Sysadmins
 
-**Notes**: 
+**Things to note**: 
 + Search is case sensitive.
 + Users will be automatically be added when they log into Catalogue if they are not already added during the intial population from ADAM.
 + If a user has been added but never logged in, only their **Username** will be popuated. Once they log in then the other fields will be populated automatically.
@@ -96,11 +99,10 @@
     - Hence recommend deleting a user via Option 2 above. 
 
 ## KEYCLOAK USER GROUP MEMBERSHIP
-**Audience**: DataBC Catalogue Administrative staff and Sysadmins
 
 The following is how to grant users to be Admin, Editors or Members of a CKAN Organization or Group.
 
-**Notes**:
+**Things to note**:
 + Groups are assigned to Users, as Users cannot be assigned to Groups via the UI.
 + Removing Groups from Users, the Group does not highlight, but does when adding Groups.
 
@@ -129,3 +131,7 @@ Fine grain has not be implimented thus the following is applied to mimic it:
         - Client Roles: realm-management
             - manage-users 
 + Users: Only grant those who are identified as Catalogue Administartive staff to use Keycloak to manage users.
+
+[RETURN TO TOP][1]
+
+[1]: #keycloak_groups
