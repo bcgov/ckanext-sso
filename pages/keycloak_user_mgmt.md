@@ -6,8 +6,12 @@
 | *BCDC Administrators* |
 
 ## Table of Contents
++ [**RESOURCES**](#resources)
 + [**ROLE DEFINITIONS**](#role-definitions)
-+ 
++ [**KEYCLOAK USERS**](#keycloak-users)
++ [**KEYCLOAK GROUPS**](#keycloak-groups)
++ [**KEYCLOAK ROLE MAPPING**](#keycloak-role-mapping)
++ [**KEYCLOAK FINE GRAIN**](#keycloak-fine-grain)
 
 -----------------------
 
