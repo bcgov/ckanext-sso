@@ -1,8 +1,9 @@
-# KEYCLOAK GROUPS
+# KEYCLOAK USER AND GROUP ADMINISTRATION
+This page is under construction and is not fully completed. 01-Oct-2021
 
 |**AUDIENCE**|**DESCRIPTION**|
 |:---|:---|
-|DataBC Catalogue Sysadmins|TBD|
+|DataBC Catalogue Sysadmins|Users with the /admin-user-mgmt-bcdc, ckan-sysadmin roles in Keycloak|
 |DataBC Catalogue Admins|TBD|
 
 ## Table of Contents
@@ -106,6 +107,8 @@ The following is how to grant users to be Admin, Editors or Members of a CKAN Or
 + Groups are assigned to Users, as Users cannot be assigned to Groups via the UI.
 + Removing Groups from Users, the Group does not highlight, but does when adding Groups.
 
+[RETURN TO TOP][1]
+
 ### ADD A GROUP TO A USER
 1. Search and click  the **User**'s ID
 1. Click the **Groups** tab
@@ -114,6 +117,8 @@ The following is how to grant users to be Admin, Editors or Members of a CKAN Or
     - This becomes highlighted
 1. Click **Join**
     - This group **_will_** now be added to the Group Membership list
+
+[RETURN TO TOP][1]
 
 ### REMOVE A GROUP FROM A USER
 1. Search and click  the **User**'s ID
@@ -134,4 +139,4 @@ Fine grain has not be implimented thus the following is applied to mimic it:
 
 [RETURN TO TOP][1]
 
-[1]: #keycloak_groups
+[1]: #keycloak-user-and-group-administration
