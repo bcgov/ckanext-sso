@@ -46,6 +46,7 @@ This page is under construction and is not fully completed. 01-Oct-2021
 |group|data-innovation-program|editor|group/data-innovation-program/editor|
 |group|data-innovation-program|member|group/data-innovation-program/member|
 
+[RETURN TO TOP][1]
 
 ### RENAME A GROUP
 **Things to note**:
@@ -57,6 +58,8 @@ This page is under construction and is not fully completed. 01-Oct-2021
 1. Double click on the **Group**
 1. Update the Group Name
 1. Repeat the above for the other associated Groups with the different privileges.
+
+[RETURN TO TOP][1]
 
 ### DELETE A GROUP
 **Things to note**:
@@ -70,6 +73,8 @@ This page is under construction and is not fully completed. 01-Oct-2021
 1. Click **Delete** again on the popup to confirm you want to delete this group
 1. Repeat the above for the other Groups with the same name and different privileges.
 
+[RETURN TO TOP][1]
+
 ## KEYCLOAK USERS
 
 **Things to note**: 
@@ -78,6 +83,8 @@ This page is under construction and is not fully completed. 01-Oct-2021
 + If a user has been added but never logged in, only their **Username** will be popuated. Once they log in then the other fields will be populated automatically.
 
 **_Future Enhancements_**: Delegation to account management is to be done via a front end management tool that will call Keycloak API.
+
+[RETURN TO TOP][1]
  
 ### ADD A USER
 1. Under **Manage**, click on **Users**
@@ -89,6 +96,8 @@ This page is under construction and is not fully completed. 01-Oct-2021
     - Email:
     - First Name: 
     - Last Name: 
+
+[RETURN TO TOP][1]
  
 ### DELETE A USER
 1. Search for their IDIR or name
@@ -98,6 +107,8 @@ This page is under construction and is not fully completed. 01-Oct-2021
 1. Click **Delete** on the popup to confirm you want to delete this user
     - The User's ID is what is displayed in this popup, therefore be sure this is the user you want to delete first.
     - Hence recommend deleting a user via Option 2 above. 
+
+[RETURN TO TOP][1]
 
 ## KEYCLOAK USER GROUP MEMBERSHIP
 
@@ -127,6 +138,8 @@ The following is how to grant users to be Admin, Editors or Members of a CKAN Or
     - This **_will not_** become highlighted
 1. Click **Leave**
     - This group will no longer be listed in the **Group Membership** list
+
+[RETURN TO TOP][1]
 
 ## KEYCLOAK FINE GRAIN
 Fine grain has not be implimented thus the following is applied to mimic it:
