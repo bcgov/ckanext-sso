@@ -5,7 +5,7 @@
 + [NOTES TO ADMINISTER GROUPS AND USERS](#notes-to-administer-groups-and-users)
    + [**ADD A GROUP**](#add-a-group)
    + [**RENAME A GROUP**](#rename-a-group)
-   + [**DELETE A GROUP**](#delete-a group)
+   + [**DELETE A GROUP**](#delete-a-group)
 + [**KEYCLOAK USERS**](#keycloak-users)
    + [**ADD A USER**](#add-a-user)
    + [**DELETE A USER**](#delete-a-user)
