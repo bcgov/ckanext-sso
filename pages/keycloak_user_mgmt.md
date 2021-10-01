@@ -21,6 +21,8 @@
 +	Keycloak Groups: https://www.keycloak.org/docs/9.0/server_admin/index.html#groups
 + CKAN User Management: https://docs.ckan.org/en/ckan-2.7.3/maintaining/authorization.html
 
+[RETURN TO TOP][1]
+
 ## ROLE DEFINITIONS
 
 |Term|Definition|Role Impact|
@@ -47,6 +49,7 @@
 |Group Editor| Partial access role to manage dataset association and partial Group administration | Ability to add/remove PUBLISHED and PENDING ARCHIVE Datasets to Group.  If an Editor or Admin of an Organization, include DRAFT and PENDING PUBLISH datasets for those Organization(s).  _ENHANCEMENT_: Edit all Group properties (description, image and privacy checkbox) other than that the Group Title and Name (URL)  | Currently requested for MVP, in PO Review - https://github.com/bcgov/ckan-ui/issues/487.  Enhancement for Post-MVP. |
 |Group Member| Basic access role to manage dataset association to the group  | Ability to add/remove PUBLISHED and PENDING ARCHIVE Datasets to Group.  If an Editor or Admin of an Organization, include DRAFT and PENDING PUBLISH datasets for those Organization(s). | Currently requested for MVP, in PO Review - https://github.com/bcgov/ckan-ui/issues/487|
 
+[RETURN TO TOP][1]
 
 ## KEYCLOAK USERS
 + Add
@@ -60,14 +63,20 @@ Adding users to Keycloak requires the following
     
 Need to review at a later date the use of @ as it conflicts with ckan and thus it behaves like an invalid user.
 
+ [RETURN TO TOP][1]
+ 
 ## KEYCLOAK GROUPS
 + Add
 + Rename
 + Delete
+ 
+[RETURN TO TOP][1]
 
 ## KEYCLOAK ROLE MAPPING
 + User
 + Group
+ 
+[RETURN TO TOP][1]
 
 ## KEYCLOAK FINE GRAIN
 Fine grain has not be implimented thus the following is applied to mimic it
