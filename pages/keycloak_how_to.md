@@ -1,7 +1,20 @@
 ## KEYCLOAK GROUPS
 **Audience**: DataBC Catalogue Sysadmins
 
-**Notes**: 
+## Table of Contents
++ [NOTES TO ADMINISTER GROUPS AND USERS](#notes-to-administer-groups-and-users)
+   + [**ADD A GROUP**](#add-a-group)
+   + [**RENAME A GROUP**](#rename-a-group)
+   + [**DELETE A GROUP**](#delete-a group)
++ [**KEYCLOAK USERS**](#keycloak-users)
+   + [**ADD A USER**](#add-a-user)
+   + [**DELETE A USER**](#delete-a-user)
++ [**KEYCLOAK USER GROUP MEMBERSHIP**](#keycloak-user-group-membership)
+   + [**ADD A GROUP TO A USER**](#add-a-group-to-a-user)
+   + [**REMOVE A GROUP FROM A USER**](#remove-a-group-from-a-user)
++ [**KEYCLOAK FINE GRAIN**](#keycloak-fine-grain)
+
+## NOTES TO ADMINISTER GROUPS AND USERS
 + Keycloak Groups are tied to the Catalogue or CKAN Organizations and Groups.
 + In CKAN there are 3 roles or level of privileges: Admin, Editor and Member, these are each defined as their own Keycloak Group.
 + Always search that a group does not already exist.
