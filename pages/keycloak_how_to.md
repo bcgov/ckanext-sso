@@ -32,7 +32,7 @@
 ### RENAME A GROUP
 **NOTES**:
 + Renaming a Keycloak Group happens when a Ministry/Org, Branch/Suborg or CKAN Group has changed.
-    - Requires the renaming of all 3 levels of privileges for that same CKAN Organization or Group.
++ Requires the renaming of all 3 levels of privileges for that same CKAN Organization or Group.
 
 1. Under **Manage**, Click **Groups**
 1. Search for the Group (case sensitve and all entries are lowercase)
@@ -42,9 +42,8 @@
 
 ### DELETE A GROUP
 **NOTES**:
-+ Deleting a Keycloak Group should
-    - Only happen when a CKAN Organization or Group needs to be deleted and not renamed.
-    - Requires the deletion of all 3 levels of privileges.
++ Deleting a Keycloak Group should only happen when a CKAN Organization or Group needs to be deleted and not renamed.
++ Requires the deletion of all 3 levels of privileges.
 
 1. Under **Manage**, Click **Groups**
 1. Search for the Group (case sensitve and all entries are lowercase)
@@ -60,7 +59,8 @@
 + Search is case sensitive.
 + Users will be automatically be added when they log into Catalogue if they are not already added during the intial population from ADAM.
 + If a user has been added but never logged in, only their **Username** will be popuated. Once they log in then the other fields will be populated automatically.
-**Future Enhancements**: Delegation to account management is to be done via a front end management tool that will call Keycloak API.
+
+**_Future Enhancements_**: Delegation to account management is to be done via a front end management tool that will call Keycloak API.
  
 ### ADD A USER
 1. Under **Manage**, click on **Users**
@@ -68,7 +68,7 @@
 1. Populate only
     - Username*: \<idir>\@idir
         - e.g., bobross@idir
-1. The following will be autopopulated when they log in
+1. The following will be autopopulated once they log in to the catalogue
     - Email:
     - First Name: 
     - Last Name: 
