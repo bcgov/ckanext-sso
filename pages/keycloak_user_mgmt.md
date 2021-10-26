@@ -66,9 +66,12 @@ Need to review at a later date the use of @ as it conflicts with ckan and thus i
  [RETURN TO TOP][1]
  
 ## KEYCLOAK GROUPS
-+ Add
-+ Rename
-+ Delete
+ 
+ |**Function**|**Description**|**Details**|
+ |:---|:---|:---:|
+ |_Add_|Adding a new group to Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#add-a-group)|
+ |_Rename_|Modifying the name of an existing group in Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#rename-a-group)|
+ |_Delete_|Deleting an existing group from Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#delete-a-group)|
  
 [RETURN TO TOP][1]
 
