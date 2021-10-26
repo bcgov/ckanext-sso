@@ -42,6 +42,9 @@ This page is under construction and is not fully completed. 01-Oct-2021
 |ministry-of-citizens-sevices|databc-program|admin|ministry-of-citizens-sevices/databc-program/admin|
 |ministry-of-citizens-sevices|databc-program|editor|ministry-of-citizens-sevices/databc-program/editor|
 |ministry-of-citizens-sevices|databc-program|member|ministry-of-citizens-sevices/databc-program/member|
+|group| |admin|group/admin|
+|group| |editor|group/editor|
+|group| |member|group/member|
 |group|data-innovation-program|admin|group/data-innovation-program/admin|
 |group|data-innovation-program|editor|group/data-innovation-program/editor|
 |group|data-innovation-program|member|group/data-innovation-program/member|
