@@ -3,8 +3,8 @@ This page is under construction and is not fully completed. 01-Oct-2021
 
 |**AUDIENCE**|**DESCRIPTION**|
 |:---|:---|
-|DataBC Catalogue Sysadmins|Users with the /admin-user-mgmt-bcdc, ckan-sysadmin roles in Keycloak|
-|DataBC Catalogue Admins|TBD|
+|_DataBC Catalogue Sysadmins_|Users with the /admin-user-mgmt-bcdc, ckan-sysadmin roles in Keycloak|
+|_DataBC Catalogue Admins_|TBD|
 
 ## Table of Contents
 + [**NOTES TO ADMINISTER GROUPS AND USERS**](#notes-to-administer-groups-and-users)
