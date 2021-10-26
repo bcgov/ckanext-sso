@@ -38,8 +38,8 @@
 |Sysadmin| | | |
 | | | | 
 |Parent Org Admin|Parent granting will provide child or suborgs abilities| |
-|Parent Org Editor|Parent granting will provide child or suborgs abilities | |Not at this time|
-|Parent Org Member|Parent granting will provide child or suborgs abilities | |Not at this time|
+|Parent Org Editor|Parent granting will provide child or suborgs abilities | |
+|Parent Org Member|Parent granting will provide child or suborgs abilities | |
 | | | |
 |Suborg Admin| | | |
 |Suborg Editor| | | |
