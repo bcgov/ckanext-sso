@@ -144,7 +144,7 @@ The following is how to grant users to be Admin, Editors or Members of a CKAN Or
 ## KEYCLOAK FINE GRAIN
 Fine grain has not be implimented thus the following is applied to mimic it:
 
-+ Group: **admin-user-mgmt-bcdc**
++ Group: **User Administrator**
     + Role mapping: 
         - Client Roles: realm-management
             - manage-users 
