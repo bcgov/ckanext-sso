@@ -52,26 +52,23 @@
 [RETURN TO TOP][1]
 
 ## KEYCLOAK USERS
-+ Add
+
+|**Function**|**Description**|**Details**|
+|:---|:---|:---:|
+|_Add_|Adding a new user to Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#add-a-user)|
+|_Delete_|Removing an existing user from Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#delete-a-user)|
  
-Adding users to Keycloak requires the following
-    - Username*: lowercase <idir>@idir
-    - Email
-    - First Name
-    - Last Name
-+ Delete
-    
-Need to review at a later date the use of @ as it conflicts with ckan and thus it behaves like an invalid user.
+**NOTE**: Need to review at a later date the use of @ as it conflicts with ckan and thus it behaves like an invalid user.
 
  [RETURN TO TOP][1]
  
 ## KEYCLOAK GROUPS
  
- |**Function**|**Description**|**Details**|
- |:---|:---|:---:|
- |_Add_|Adding a new group to Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#add-a-group)|
- |_Rename_|Modifying the name of an existing group in Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#rename-a-group)|
- |_Delete_|Deleting an existing group from Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#delete-a-group)|
+|**Function**|**Description**|**Details**|
+|:---|:---|:---:|
+|_Add_|Adding a new group to Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#add-a-group)|
+|_Rename_|Modifying the name of an existing group in Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#rename-a-group)|
+|_Delete_|Deleting an existing group from Keycloak|Click [here](https://github.com/bcgov/ckanext-sso/blob/docs/pages/keycloak_how_to.md#delete-a-group)|
  
 [RETURN TO TOP][1]
 
