@@ -1,9 +1,9 @@
 # KEYCLOAK MANAGEMENT FOR BC DATA CATALOGUE
 
-|**AUDIENCE**|
-|:---:|
-| *Keycloak Administrators* | 
-| *BCDC Administrators* |
+|**AUDIENCE**|**ACCESS**|
+|:---|:---|
+| *Keycloak Administrators* |Ability to manage Keycloak Users, Groups, defined below, within Keycloak|
+| *BCDC Administrators* | _TBD_|
 
 ## Table of Contents
 + [**RESOURCES**](#resources)
