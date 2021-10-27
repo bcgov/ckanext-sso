@@ -28,6 +28,7 @@ This page is under construction and is not fully completed. 01-Oct-2021
     - if not using the API to retrieve this, the easiset way is to copy from the URL when clicking on the CKAN Organization or Group.
 + CKAN Organizations and Groups are stored in the same field and thus must be unique.
 
+[RETURN TO TOP][1]
 
 ### ADD A GROUP
 1. Under **Manage**, click on **Groups** 
