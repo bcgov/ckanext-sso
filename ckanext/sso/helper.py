@@ -33,20 +33,21 @@ class SSOHelper(object):
         # user_data = self.oidc_client.decode_token(user_token, '', options={ 'verify_signature': False })
         import jwt
         user_data = jwt.decode(token, '', False)
-        try : email = user_data[self.profile_email_field]
-        except :
-            log.debug("Not Found Email.")
-        try : user_name = user_data[self.profile_username_field]
-        except :
-            log.debug("Not Found User Name.")
+        try:
+            email = user_data[self.profile_email_field]
+        except:
+            log.debug("Not Found: Email")
+            email = None
+        try:
+            user_name = user_data[self.profile_username_field]
+        except:
+            log.debug("Not Found: User Name")
+            return None
 
-        user = None
-        users = model.User.by_email(email)
-        if len(users) == 1:
-            user = users[0]
+        user = model.User.get(user_name)
         if user is None:
-            user = model.User(email=email)
-        user.name = user_name
+            user = model.User(name=user_name)
+        user.email = email
         if self.profile_fullname_field and self.profile_fullname_field in user_data:
             user.fullname = user_data[self.profile_fullname_field]
         if self.profile_group_field and self.profile_group_field in user_data:
