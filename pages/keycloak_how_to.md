@@ -57,11 +57,24 @@ This page is under construction and is not fully completed. 01-Oct-2021
 + Renaming a Keycloak Group happens when a Ministry/Org, Branch/Suborg or CKAN Group has changed.
 + Requires the renaming of all 3 levels of privileges for that same CKAN Organization or Group.
 
+NOTE: Changing the org name should be done in the catalgoue first.
+1. Log in as a sysadmin
+2. Navigate to the organization
+3. Click _Edit Organzation_
+4. Update _Name_
+    +  Change special characters like & to 'and'
+5. Update _URL_
+    + Requirements:
+        - Lower case name 
+        - Spaces replaced with dashes
+6. Copy the URL name to your clipboard.
+
 1. Under **Manage**, Click **Groups**
 1. Search for the Group (case sensitve and all entries are lowercase)
 1. Double click on the **Group**
-1. Update the Group Name
-1. Repeat the above for the other associated Groups with the different privileges.
+    -+NOTE: Start with editor Group profile
+3. Update the Group Name
+4. Repeat the above for the other associated Groups with the different privileges.
 
 [RETURN TO TOP][1]
 
