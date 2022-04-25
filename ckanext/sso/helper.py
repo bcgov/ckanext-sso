@@ -63,51 +63,51 @@ class SSOHelper(object):
         model.Session.commit()
         model.Session.remove()
 
-        changedGroups = False
-        if self.profile_group_field and self.profile_group_delim and self.profile_group_field in user_data:
-            membership = model.Session.query(model.Member).filter(model.Member.table_name == 'user').filter(model.Member.table_id == user.id).all()
+        # changedGroups = False
+        # if self.profile_group_field and self.profile_group_delim and self.profile_group_field in user_data:
+        #     membership = model.Session.query(model.Member).filter(model.Member.table_name == 'user').filter(model.Member.table_id == user.id).all()
             
-            for group in user_data[self.profile_group_field]:
+        #     for group in user_data[self.profile_group_field]:
 
-                group = group.lstrip(self.profile_group_delim)
+        #         group = group.lstrip(self.profile_group_delim)
                 
-                group = group.split(self.profile_group_delim)
+        #         group = group.split(self.profile_group_delim)
 
-                if len(group) >= 2:
-                    group_name = "".join(group[len(group)-2].strip())
-                    capacity = group[len(group)-1].lower()
+        #         if len(group) >= 2:
+        #             group_name = "".join(group[len(group)-2].strip())
+        #             capacity = group[len(group)-1].lower()
 
-                    dbGroup = model.Session.query(model.Group).filter(model.Group.name == group_name).first()
-                    if not dbGroup is None:
+        #             dbGroup = model.Session.query(model.Group).filter(model.Group.name == group_name).first()
+        #             if not dbGroup is None:
                         
-                        capacity = capacity.lower()
+        #                 capacity = capacity.lower()
 
-                        if capacity in ["admin", "editor", "member"]:
-                            memberDb = None
-                            for memberOf in membership:
-                                if memberOf.group_id == dbGroup.id and memberOf.capacity == capacity and memberOf.state == 'active':
-                                    memberDb = memberOf
-                                    break
+        #                 if capacity in ["admin", "editor", "member"]:
+        #                     memberDb = None
+        #                     for memberOf in membership:
+        #                         if memberOf.group_id == dbGroup.id and memberOf.capacity == capacity and memberOf.state == 'active':
+        #                             memberDb = memberOf
+        #                             break
 
-                            if not memberDb is None:
-                                membership.remove(memberDb)
+        #                     if not memberDb is None:
+        #                         membership.remove(memberDb)
 
-                            if memberDb is None:
-                                member = model.Member(table_name='user', table_id=user.id, capacity=capacity, group=dbGroup)
-                                log.info('Add user %s into group %s', user.name, dbGroup.name)
-                                rev = model.repo.new_revision()
-                                rev.author = user.id
-                                model.Session.add(member)
-                                changedGroups = True
+        #                     if memberDb is None:
+        #                         member = model.Member(table_name='user', table_id=user.id, capacity=capacity, group=dbGroup)
+        #                         log.info('Add user %s into group %s', user.name, dbGroup.name)
+        #                         rev = model.repo.new_revision()
+        #                         rev.author = user.id
+        #                         model.Session.add(member)
+        #                         changedGroups = True
 
-            for memberRec in membership:
-                changedGroups = True
-                log.info('Removing user %s from group %s', user.name, memberRec.group_id)
-                model.Session.delete(memberRec)
+        #     for memberRec in membership:
+        #         changedGroups = True
+        #         log.info('Removing user %s from group %s', user.name, memberRec.group_id)
+        #         model.Session.delete(memberRec)
 
 
-            if changedGroups:
-                model.Session.commit()
-                model.Session.remove()
+        #     if changedGroups:
+        #         model.Session.commit()
+        #         model.Session.remove()
 
         return user.name
