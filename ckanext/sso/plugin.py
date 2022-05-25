@@ -35,7 +35,8 @@ class SSOPlugin(plugins.SingletonPlugin):
             'ckan.sso.profile_fullname_field',
             'ckan.sso.profile_email_field',
             'ckan.sso.profile_group_field',
-            'ckan.sso.sysadmin_group_name'
+            'ckan.sso.sysadmin_group_name',
+            'ckan.sso.profile_group_delim'
         )
         for key in required_keys:
             if config.get(key) is None:

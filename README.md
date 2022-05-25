@@ -29,5 +29,6 @@ ckan.sso.profile_group_field = groups
 ckan.sso.profile_username_field = preferred_username
 ckan.sso.profile_email_field = email
 ckan.sso.profile_fullname_field = name
+ckan.sso.profile_group_delim = / # for keycloak default
 ```
 5) Restart CKAN if it was already running
