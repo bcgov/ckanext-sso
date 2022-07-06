@@ -48,6 +48,7 @@ class SSOHelper(object):
         if user is None:
             user = model.User(name=user_name)
         user.email = email
+        user.sysadmin = False
         if self.profile_fullname_field and self.profile_fullname_field in user_data:
             user.fullname = user_data[self.profile_fullname_field]
         if self.profile_group_field and self.profile_group_field in user_data:
@@ -55,8 +56,7 @@ class SSOHelper(object):
                 self.profile_group_field] or self.profile_group_delim + self.sysadmin_group_name in user_data[
                                                  self.profile_group_field]):
                 user.sysadmin = True
-            else:
-                user.sysadmin = False
+                
 
         log.info('Add user into ckan database: %s'%user)
         model.Session.add(user)
