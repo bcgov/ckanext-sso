@@ -39,7 +39,9 @@ class SSOHelper(object):
             log.debug("Not Found: Email")
             email = None
         try:
-            user_name = user_data[self.profile_username_field]
+            user_name = user_data[self.profile_username_field].lower()
+            if "@idir" not in user_name:
+                user_name += "@idir"
         except:
             log.debug("Not Found: User Name")
             return None
