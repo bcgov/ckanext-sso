@@ -75,6 +75,7 @@ class SSOHelper(object):
             
             for top_group in top_level_orgs:
                 dbGroup = None
+                hasRole = False
                 for group in user_data[self.profile_group_field]:
                     group = group.lstrip(self.profile_group_delim)
                     group = group.split(self.profile_group_delim)
@@ -86,14 +87,16 @@ class SSOHelper(object):
 
                         if not dbGroup is None and top_group.name == group_name:
                             if capacity in ["admin", "editor", "member"]:
+                                hasRole = True
                                 break
-                            else:
-                                member = model.Member(table_name='user', table_id=user.id, capacity='member', group=dbGroup)
-                                log.info('Add user %s into group %s', user.name, dbGroup.name)
-                                rev = model.repo.new_revision()
-                                rev.author = user.id
-                                model.Session.add(member)
-                                changedGroups = True
+
+                if not hasRole:
+                    member = model.Member(table_name='user', table_id=user.id, capacity='member', group=dbGroup)
+                    log.info('Add user %s into group %s', user.name, dbGroup.name)
+                    rev = model.repo.new_revision()
+                    rev.author = user.id
+                    model.Session.add(member)
+                    changedGroups = True
             
         if changedGroups:
             model.Session.commit()
