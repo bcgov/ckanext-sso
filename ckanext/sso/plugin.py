@@ -1,19 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
 import logging
-import helper
+from . import helper
 
 from ckan import plugins
 from ckan.plugins import toolkit
 from pylons import config
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import ckan.model as model
 from ckan.lib.helpers import redirect_to as redirect
 
 log = logging.getLogger(__name__)
+
 
 class SSOPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IAuthenticator, inherit=True)
@@ -22,7 +21,7 @@ class SSOPlugin(plugins.SingletonPlugin):
     def __init__(self, name=None):
         self.sso_helper = helper.SSOHelper()
 
-    def update_config(self,config):
+    def update_config(self, config):
         return None
 
     def configure(self, config):
@@ -43,54 +42,55 @@ class SSOPlugin(plugins.SingletonPlugin):
                 raise RuntimeError('Required configuration option {0} not found.'.format(key))
 
     def identify(self):
-        if not getattr(toolkit.c, u'user', None):
+        if not getattr(toolkit.c, 'user', None):
             self._identify_user_default()
-        if toolkit.c.user and not getattr(toolkit.c, u'userobj', None):
+        if toolkit.c.user and not getattr(toolkit.c, 'userobj', None):
             toolkit.c.userobj = model.User.by_name(toolkit.c.user)
 
     def _identify_user_default(self):
-        toolkit.c.user = toolkit.request.environ.get(u'REMOTE_USER', u'')
+        toolkit.c.user = toolkit.request.environ.get('REMOTE_USER', '')
         if toolkit.c.user:
-            toolkit.c.user = toolkit.c.user.decode(u'utf8')
+            toolkit.c.user = toolkit.c.user.decode('utf8')
             toolkit.c.userobj = model.User.by_name(toolkit.c.user)
             if toolkit.c.userobj is None or not toolkit.c.userobj.is_active():
-                ev = request.environ
-                if u'repoze.who.plugins' in ev:
-                    pth = getattr(ev[u'repoze.who.plugins'][u'friendlyform'],
-                          u'logout_handler_path')
+                ev = toolkit.request.environ
+                if 'repoze.who.plugins' in ev:
+                    pth = getattr(ev['repoze.who.plugins']['friendlyform'],
+                          'logout_handler_path')
                 redirect(pth)
         else:
             toolkit.c.userobj = self._get_user_info()
-            if 'name' in dir(toolkit.c.userobj) :
+            if 'name' in dir(toolkit.c.userobj):
                 toolkit.c.user = toolkit.c.userobj.name
                 toolkit.c.author = toolkit.c.userobj.name
                 log.debug('toolkit.c.userobj.id :' + toolkit.c.userobj.id)
                 log.debug('toolkit.c.userobj.name :' + toolkit.c.userobj.name)
 
     def _get_user_info(self):
-        authorizationKey = toolkit.request.headers.get(u'Authorization', u'')
+        authorizationKey = toolkit.request.headers.get('Authorization', '')
         if not authorizationKey:
-            authorizationKey = toolkit.request.environ.get(u'Authorization', u'')
+            authorizationKey = toolkit.request.environ.get('Authorization', '')
         if not authorizationKey:
-            authorizationKey = toolkit.request.environ.get(u'HTTP_AUTHORIZATION', u'')
+            authorizationKey = toolkit.request.environ.get('HTTP_AUTHORIZATION', '')
         if not authorizationKey:
-            authorizationKey = toolkit.request.environ.get(u'Authorization', u'')
-            if u' ' in authorizationKey:
-                authorizationKey = u''
+            authorizationKey = toolkit.request.environ.get('Authorization', '')
+            if ' ' in authorizationKey:
+                authorizationKey = ''
         if not authorizationKey:
             return None
 
-        authorizationKey = authorizationKey.decode(u'utf8', u'ignore')
+        authorizationKey = authorizationKey.decode('utf8', 'ignore')
         if authorizationKey.startswith("Bearer "):
             authorizationKey = authorizationKey[len("Bearer ")::]
             
         user = None
         query = model.Session.query(model.User)
         user = query.filter_by(apikey=authorizationKey).first()
-        if user == None :
+        if user is None:
             try:
                 user = self.sso_helper.identify(authorizationKey)
                 user = query.filter_by(name=user).first()
             except Exception as e:
-                log.error( e.message)
+                error_message = str(e)
+                log.error(error_message)
         return user
