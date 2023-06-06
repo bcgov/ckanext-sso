@@ -5,7 +5,7 @@ from . import helper
 
 from ckan import plugins
 from ckan.plugins import toolkit
-from pylons import config
+from ckan.plugins.toolkit import config
 from urllib.parse import urlparse
 
 import ckan.model as model

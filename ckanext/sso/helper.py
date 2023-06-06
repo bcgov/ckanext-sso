@@ -6,7 +6,7 @@ import logging
 import os
 from six.moves.urllib.parse import urljoin
 from base64 import b64encode, b64decode
-from pylons import config
+from ckan.plugins.toolkit import config
 from keycloak.realm import KeycloakRealm
 
 log = logging.getLogger(__name__)
@@ -14,16 +14,16 @@ log = logging.getLogger(__name__)
 class SSOHelper(object):
 
     def __init__(self):
-        self.authorization_endpoint = config.get('ckan.sso.authorization_endpoint', None)
-        self.client_id = config.get('ckan.sso.client_id', None)
-        self.client_secret = config.get('ckan.sso.client_secret', None)
-        self.realm = config.get('ckan.sso.realm', 'ckan')
-        self.profile_username_field = config.get('ckan.sso.profile_username_field', None)
-        self.profile_fullname_field = config.get('ckan.sso.profile_fullname_field', None)
-        self.profile_email_field = config.get('ckan.sso.profile_email_field', None)
-        self.profile_group_field = config.get('ckan.sso.profile_group_field', None)
-        self.sysadmin_group_name = config.get('ckan.sso.sysadmin_group_name', None)
-        self.profile_group_delim = config.get('ckan.sso.profile_group_delim', None)
+        self.authorization_endpoint = config.get('ckan.sso.authorization_endpoint') or None
+        self.client_id = config.get('ckan.sso.client_id') or None
+        self.client_secret = config.get('ckan.sso.client_secret') or None
+        self.realm = config.get('ckan.sso.realm') or 'ckan'
+        self.profile_username_field = config.get('ckan.sso.profile_username_field') or None
+        self.profile_fullname_field = config.get('ckan.sso.profile_fullname_field') or None
+        self.profile_email_field = config.get('ckan.sso.profile_email_field') or None
+        self.profile_group_field = config.get('ckan.sso.profile_group_field') or None
+        self.sysadmin_group_name = config.get('ckan.sso.sysadmin_group_name') or None
+        self.profile_group_delim = config.get('ckan.sso.profile_group_delim') or None
         realm = KeycloakRealm(server_url=self.authorization_endpoint, realm_name=self.realm)
         self.oidc_client = realm.open_id_connect(client_id=self.client_id,client_secret=self.client_secret)
 
