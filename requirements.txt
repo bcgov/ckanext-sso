@@ -1,3 +1,2 @@
-python-keycloak-client==0.2.3
 python-keycloak==3.3.0
 PyJWT==2.8.0
