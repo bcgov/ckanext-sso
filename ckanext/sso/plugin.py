@@ -79,7 +79,6 @@ class SSOPlugin(plugins.SingletonPlugin):
         if not authorizationKey:
             return None
 
-        authorizationKey = authorizationKey.decode('utf8', 'ignore')
         if authorizationKey.startswith("Bearer "):
             authorizationKey = authorizationKey[len("Bearer ")::]
             
