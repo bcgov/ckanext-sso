@@ -74,25 +74,10 @@ class SSOHelper(object):
             membership = model.Session.query(model.Member).filter(model.Member.table_name == 'user').filter(model.Member.table_id == user.id).all()
             
             for top_group in top_level_orgs:
-                dbGroup = None
-                hasRole = False
-                for group in user_data[self.profile_group_field]:
-                    group = group.lstrip(self.profile_group_delim)
-                    group = group.split(self.profile_group_delim)
-
-                    if len(group) >= 2:
-                        group_name = "".join(group[len(group)-2].strip())
-                        capacity = group[len(group)-1].lower()
-                        dbGroup = model.Session.query(model.Group).filter(model.Group.name == group_name).first()
-
-                        if not dbGroup is None and top_group.name == group_name:
-                            if capacity in ["admin", "editor", "member"]:
-                                hasRole = True
-                                break
-
-                if not hasRole:
-                    member = model.Member(table_name='user', table_id=user.id, capacity='member', group=dbGroup)
-                    log.info('Add user %s into group %s', user.name, dbGroup.name)
+                if top_group.id not in [g.group_id for g in membership]:
+                    # dbGroup = model.Session.query(model.Group).filter(model.Group.id == top_group.id).first()
+                    member = model.Member(table_name='user', table_id=user.id, capacity='member', group=top_group)
+                    log.info('Add user %s into group %s', user.name, top_group.name)
                     rev = model.repo.new_revision()
                     rev.author = user.id
                     model.Session.add(member)
