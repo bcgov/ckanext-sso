@@ -58,7 +58,6 @@ class SSOHelper(object):
                 self.profile_group_field] or self.profile_group_delim + self.sysadmin_group_name in user_data[
                                                  self.profile_group_field]):
                 user.sysadmin = True
-                
 
         log.info('Add user into ckan database: %s'%user)
         model.Session.add(user)
@@ -78,11 +77,9 @@ class SSOHelper(object):
                     # dbGroup = model.Session.query(model.Group).filter(model.Group.id == top_group.id).first()
                     member = model.Member(table_name='user', table_id=user.id, capacity='member', group=top_group)
                     log.info('Add user %s into group %s', user.name, top_group.name)
-                    rev = model.repo.new_revision()
-                    rev.author = user.id
                     model.Session.add(member)
                     changedGroups = True
-            
+        
         if changedGroups:
             model.Session.commit()
 
