@@ -58,9 +58,8 @@ class SSOHelper(object):
                 self.profile_group_field] or self.profile_group_delim + self.sysadmin_group_name in user_data[
                                                  self.profile_group_field]):
                 user.sysadmin = True
-        log.info('profile group field: %s'%self.profile_group_field)
-        log.info('sysadmin group name: %s'%self.profile_group_field)
-        log.info('Add user into ckan database: %s'%user_data[self.profile_group_field])
+
+        log.info('Add user into ckan database: %s'%user_data)
         model.Session.add(user)
         model.Session.commit()
         model.Session.remove()
