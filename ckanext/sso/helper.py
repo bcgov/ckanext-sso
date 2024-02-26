@@ -82,6 +82,7 @@ class SSOHelper(object):
         
         if changedGroups:
             model.Session.commit()
+            model.Session.remove()
 
                 
         
