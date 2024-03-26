@@ -65,22 +65,22 @@ class SSOHelper(object):
 
         # Add users to top level orgs as members to facilitate IDIR secure
         # datasets in CKAN 2.9
-        changedGroups = False
-        top_level_orgs = model.Group.get_top_level_groups(type="organization")
+        # changedGroups = False
+        # top_level_orgs = model.Group.get_top_level_groups(type="organization")
 
-        if self.profile_group_field and self.profile_group_delim and self.profile_group_field in user_data:
-            membership = model.Session.query(model.Member).filter(model.Member.table_name == 'user').filter(model.Member.table_id == user.id).all()
+        # if self.profile_group_field and self.profile_group_delim and self.profile_group_field in user_data:
+        #     membership = model.Session.query(model.Member).filter(model.Member.table_name == 'user').filter(model.Member.table_id == user.id).all()
             
-            for top_group in top_level_orgs:
-                if top_group.id not in [g.group_id for g in membership]:
-                    # dbGroup = model.Session.query(model.Group).filter(model.Group.id == top_group.id).first()
-                    member = model.Member(table_name='user', table_id=user.id, capacity='member', group=top_group)
-                    log.info('Add user %s into group %s', user.name, top_group.name)
-                    model.Session.add(member)
-                    changedGroups = True
+        #     for top_group in top_level_orgs:
+        #         if top_group.id not in [g.group_id for g in membership]:
+        #             # dbGroup = model.Session.query(model.Group).filter(model.Group.id == top_group.id).first()
+        #             member = model.Member(table_name='user', table_id=user.id, capacity='member', group=top_group)
+        #             log.info('Add user %s into group %s', user.name, top_group.name)
+        #             model.Session.add(member)
+        #             changedGroups = True
         
-        if changedGroups:
-            model.Session.commit()
+        # if changedGroups:
+        #     model.Session.commit()
         
         model.Session.remove()
 
