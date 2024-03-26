@@ -62,7 +62,6 @@ class SSOHelper(object):
         log.info('Add user into ckan database: %s'%user)
         model.Session.add(user)
         model.Session.commit()
-        model.Session.remove()
 
         # Add users to top level orgs as members to facilitate IDIR secure
         # datasets in CKAN 2.9
@@ -82,7 +81,8 @@ class SSOHelper(object):
         
         if changedGroups:
             model.Session.commit()
-            model.Session.remove()
+        
+        model.Session.remove()
 
                 
         
