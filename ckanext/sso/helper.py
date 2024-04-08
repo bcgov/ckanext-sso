@@ -32,7 +32,7 @@ class SSOHelper(object):
         user_token = self.oidc_client.userinfo(token)
         # user_data = self.oidc_client.decode_token(user_token, '', options={ 'verify_signature': False })
         import jwt
-        user_data = jwt.decode(token, '', verify=False, options={'verify_signature': False})
+        user_data = jwt.decode(token, algorithms=["RS256"])
         try:
             email = user_data[self.profile_email_field]
         except:
@@ -75,11 +75,13 @@ class SSOHelper(object):
                     SELECT m.group_id 
                     FROM "member" AS m 
                     WHERE m.table_name = 'group'
-                        OR (m.table_id = '1f659748-9e1a-4c38-b48e-bf1523938323'
+                        OR (m.table_id = '{user.id}'
                             AND m.table_name = 'user'
                             AND m.state = 'active')
                 );
         ''')
+
+        log.info('Add adding to groups: %s'%groups_to_join)
 
         for group in groups_to_join:
             member = model.Member(table_name='user', table_id=user.id, capacity='member', group=group.group_id)
