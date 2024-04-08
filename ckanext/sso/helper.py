@@ -65,6 +65,31 @@ class SSOHelper(object):
 
         # Add users to top level orgs as members to facilitate IDIR secure
         # datasets in CKAN 2.9
+
+
+        groups_to_join = model.Session.execute('''
+            SELECT g.id AS group_id
+            FROM "group" AS g
+            WHERE g.is_organization
+                AND g.id NOT IN (
+                    SELECT m.group_id 
+                    FROM "member" AS m 
+                    WHERE m.table_name = 'group'
+                        OR (m.table_id = '1f659748-9e1a-4c38-b48e-bf1523938323'
+                            AND m.table_name = 'user'
+                            AND m.state = 'active')
+                );
+        ''')
+
+        for group in groups_to_join:
+            member = model.Member(table_name='user', table_id=user.id, capacity='member', group=group.group_id)
+            model.Session.add(member)
+
+        if len(groups_to_join) > 0:
+            model.Session.commit()
+        
+        model.Session.remove()
+
         # changedGroups = False
         # top_level_orgs = model.Group.get_top_level_groups(type="organization")
 
