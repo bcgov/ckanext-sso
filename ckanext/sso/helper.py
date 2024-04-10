@@ -32,7 +32,7 @@ class SSOHelper(object):
         user_token = self.oidc_client.userinfo(token)
         # user_data = self.oidc_client.decode_token(user_token, '', options={ 'verify_signature': False })
         import jwt
-        user_data = jwt.decode(token, algorithms=["RS256"])
+        user_data = jwt.decode(token, '', verify=False, options={'verify_signature': False})
         try:
             email = user_data[self.profile_email_field]
         except:
