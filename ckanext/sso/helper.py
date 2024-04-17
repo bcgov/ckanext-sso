@@ -81,10 +81,11 @@ class SSOHelper(object):
                 );
         ''')
 
-        log.info('Add adding to groups: %s'%groups_to_join)
-
         for group in groups_to_join:
-            member = model.Member(table_name='user', table_id=user.id, capacity='member', group=group.group_id)
+            group_d = dict(group)
+            log.info('Add adding to groups: %s'%group_d.id)
+
+            member = model.Member(table_name='user', table_id=user.id, capacity='member', group=group_d.group_id)
             model.Session.add(member)
 
         if len(groups_to_join) > 0:
