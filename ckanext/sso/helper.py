@@ -80,15 +80,17 @@ class SSOHelper(object):
                             AND m.state = 'active')
                 );
         ''')
-
+        
+        group_added = False
         for group in groups_to_join:
             group_d = dict(group)
             log.info('Add adding to groups: %s'%group_d)
 
             member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=group_d['group_id'])
             model.Session.add(member)
+            group_added = True
 
-        if len(groups_to_join) > 0:
+        if group_added:
             model.Session.commit()
         
         model.Session.remove()
