@@ -65,8 +65,7 @@ class SSOHelper(object):
 
         # Add users to top level orgs as members to facilitate IDIR secure
         # datasets in CKAN 2.9
-
-
+        # Done with this custom query to improve performance
         groups_to_join = model.Session.execute('''
             SELECT g.id AS group_id
             FROM "group" AS g
@@ -80,12 +79,10 @@ class SSOHelper(object):
                             AND m.state = 'active')
                 );
         ''')
-        
+
         group_added = False
         for group in groups_to_join:
             group_d = dict(group)
-            log.info('Add adding to groups: %s'%group_d)
-
             member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=group_d['group_id'])
             model.Session.add(member)
             group_added = True
@@ -94,74 +91,5 @@ class SSOHelper(object):
             model.Session.commit()
         
         model.Session.remove()
-
-        # changedGroups = False
-        # top_level_orgs = model.Group.get_top_level_groups(type="organization")
-
-        # if self.profile_group_field and self.profile_group_delim and self.profile_group_field in user_data:
-        #     membership = model.Session.query(model.Member).filter(model.Member.table_name == 'user').filter(model.Member.table_id == user.id).all()
-            
-        #     for top_group in top_level_orgs:
-        #         if top_group.id not in [g.group_id for g in membership]:
-        #             # dbGroup = model.Session.query(model.Group).filter(model.Group.id == top_group.id).first()
-        #             member = model.Member(table_name='user', table_id=user.id, capacity='member', group=top_group)
-        #             log.info('Add user %s into group %s', user.name, top_group.name)
-        #             model.Session.add(member)
-        #             changedGroups = True
-        
-        # if changedGroups:
-        #     model.Session.commit()
-        
-        model.Session.remove()
-
-                
-        
-
-        # changedGroups = False
-        # if self.profile_group_field and self.profile_group_delim and self.profile_group_field in user_data:
-        #     membership = model.Session.query(model.Member).filter(model.Member.table_name == 'user').filter(model.Member.table_id == user.id).all()
-            
-        #     for group in user_data[self.profile_group_field]:
-
-        #         group = group.lstrip(self.profile_group_delim)
-                
-        #         group = group.split(self.profile_group_delim)
-
-        #         if len(group) >= 2:
-        #             group_name = "".join(group[len(group)-2].strip())
-        #             capacity = group[len(group)-1].lower()
-
-        #             dbGroup = model.Session.query(model.Group).filter(model.Group.name == group_name).first()
-        #             if not dbGroup is None:
-                        
-        #                 capacity = capacity.lower()
-
-        #                 if capacity in ["admin", "editor", "member"]:
-        #                     memberDb = None
-        #                     for memberOf in membership:
-        #                         if memberOf.group_id == dbGroup.id and memberOf.capacity == capacity and memberOf.state == 'active':
-        #                             memberDb = memberOf
-        #                             break
-
-        #                     if not memberDb is None:
-        #                         membership.remove(memberDb)
-
-        #                     if memberDb is None:
-        #                         member = model.Member(table_name='user', table_id=user.id, capacity=capacity, group=dbGroup)
-        #                         log.info('Add user %s into group %s', user.name, dbGroup.name)
-        #                         rev = model.repo.new_revision()
-        #                         rev.author = user.id
-        #                         model.Session.add(member)
-        #                         changedGroups = True
-
-        #     for memberRec in membership:
-        #         changedGroups = True
-        #         log.info('Removing user %s from group %s', user.name, memberRec.group_id)
-        #         model.Session.delete(memberRec)
-
-
-        #     if changedGroups:
-        #         model.Session.commit()
-        #         model.Session.remove()
 
         return user.name
