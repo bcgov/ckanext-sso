@@ -85,7 +85,7 @@ class SSOHelper(object):
             group_d = dict(group)
             log.info('Add adding to groups: %s'%group_d)
 
-            member = model.Member(table_name='user', table_id=user.id, capacity='member', group=group_d['group_id'])
+            member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=group_d['group_id'])
             model.Session.add(member)
 
         if len(groups_to_join) > 0:
