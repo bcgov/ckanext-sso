@@ -59,7 +59,7 @@ class SSOHelper(object):
                                                  self.profile_group_field]):
                 user.sysadmin = True
 
-        log.info('Add user into ckan database: %s'%user)
+        log.info('Add user into CKAN database: %s'%user)
         model.Session.add(user)
         model.Session.commit()
 
