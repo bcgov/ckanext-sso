@@ -60,14 +60,13 @@ class SSOHelper(object):
                 user.sysadmin = True
 
         log.info('Add user into ckan database: %s'%user)
-        log.info('User ID: %s'%user.id)
         model.Session.add(user)
         model.Session.commit()
 
         # Add users to top level orgs as members to facilitate IDIR secure
         # datasets in CKAN 2.9
         # Done with this custom query to improve performance
-        query = '''
+        groups_to_join = model.Session.execute('''
             SELECT g.id AS group_id
             FROM "group" AS g
             WHERE g.is_organization
@@ -75,16 +74,15 @@ class SSOHelper(object):
                     SELECT m.group_id 
                     FROM "member" AS m 
                     WHERE m.table_name = 'group'
-                        OR (m.table_id = '{user.id}'
+                        OR (m.table_id = :userid
                             AND m.table_name = 'user'
                             AND m.state = 'active')
                 );
-        '''
-        log.info(query)
-        groups_to_join = model.Session.execute(query)
+        ''', {'userid': user.id})
 
         group_added = False
         for group in groups_to_join:
+            log.info('Add user into groupe: %s'%group)
             group_d = dict(group)
             member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=group_d['group_id'])
             model.Session.add(member)
