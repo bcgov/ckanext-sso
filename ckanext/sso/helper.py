@@ -79,7 +79,7 @@ class SSOHelper(object):
                             AND m.state = 'active')
                 );
         '''
-        log.info('Query: %s'%query)
+        log.info(query)
         groups_to_join = model.Session.execute(query)
 
         group_added = False
