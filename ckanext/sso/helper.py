@@ -59,7 +59,7 @@ class SSOHelper(object):
                                                  self.profile_group_field]):
                 user.sysadmin = True
 
-        log.info('Add user into ckan database: %s'%user)
+        log.info('Add user into CKAN database: %s'%user)
         model.Session.add(user)
         model.Session.commit()
 
@@ -74,14 +74,15 @@ class SSOHelper(object):
                     SELECT m.group_id 
                     FROM "member" AS m 
                     WHERE m.table_name = 'group'
-                        OR (m.table_id = '{user.id}'
+                        OR (m.table_id = :userid
                             AND m.table_name = 'user'
                             AND m.state = 'active')
                 );
-        ''')
+        ''', {'userid': user.id})
 
         group_added = False
         for group in groups_to_join:
+            log.info('Add user into group: %s'%group)
             group_d = dict(group)
             member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=group_d['group_id'])
             model.Session.add(member)
