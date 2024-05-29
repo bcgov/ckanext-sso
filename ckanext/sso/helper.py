@@ -82,7 +82,7 @@ class SSOHelper(object):
 
         group_added = False
         for group in groups_to_join:
-            log.info('Add user into groupe: %s'%group)
+            log.info('Add user into group: %s'%group)
             group_d = dict(group)
             member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=group_d['group_id'])
             model.Session.add(member)
