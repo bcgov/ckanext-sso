@@ -82,9 +82,9 @@ class SSOHelper(object):
 
         group_added = False
         for group in groups_to_join:
-            log.info('Add user into group : .%s.'%group.group_id)
+            log.info('Add user into group: %s'%group.group_id)
             # group_d = group._asdict()
-            member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=group.group_id)
+            member = model.Member(table_name='user', table_id=user.id, capacity='member', group_id=str(group.group_id))
             model.Session.add(member)
             group_added = True
 
