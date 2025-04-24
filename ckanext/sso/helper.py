@@ -71,9 +71,11 @@ class SSOHelper(object):
             FROM "group" AS g
             WHERE g.is_organization
                 AND g.id NOT IN (
-                    m.table_id = :userid
+                    SELECT m.group_id 
+                    FROM "member" AS m 
+                    WHERE m.table_id = :userid
                     AND m.table_name = 'user'
-                    AND m.state = 'active'
+                    AND m.state = 'active')
                 );
         ''', {'userid': user.id})
 
