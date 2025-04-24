@@ -59,7 +59,7 @@ class SSOHelper(object):
                                                  self.profile_group_field]):
                 user.sysadmin = True
 
-        log.info('Add user into CKAN database: %s'%user)
+        log.info('Add user into CKAN database: %s'%user.name)
         model.Session.add(user)
         model.Session.commit()
 
@@ -71,12 +71,9 @@ class SSOHelper(object):
             FROM "group" AS g
             WHERE g.is_organization
                 AND g.id NOT IN (
-                    SELECT m.group_id 
-                    FROM "member" AS m 
-                    WHERE m.table_name = 'group'
-                        OR (m.table_id = :userid
-                            AND m.table_name = 'user'
-                            AND m.state = 'active')
+                    m.table_id = :userid
+                    AND m.table_name = 'user'
+                    AND m.state = 'active'
                 );
         ''', {'userid': user.id})
 
