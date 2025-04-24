@@ -75,7 +75,7 @@ class SSOHelper(object):
                     FROM "member" AS m 
                     WHERE m.table_id = :userid
                     AND m.table_name = 'user'
-                    AND m.state = 'active')
+                    AND m.state = 'active'
                 );
         ''', {'userid': user.id})
 
